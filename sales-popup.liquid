@@ -1,0 +1,136 @@
+ <section id="csp" class="custom-social-proof moveout">
+
+   {% for notification in section.blocks %}
+   {% assign product = notification.settings.product %}
+   <div class="custom-notification">
+        <a href="{{ product.url }}">
+      <div class="custom-notification-container">
+        <div class="custom-notification-image-wrapper">
+          <img src="{{ product.featured_image.src | img_url : 'x80' }}">
+        </div>
+        <div class="custom-notification-content-wrapper">
+          <p class="custom-notification-content">
+            <span class="name">{{ notification.settings.name }}</span><br>Just Purchased: <b>{{ product.title }}</b>   
+            <small>{{ product.price_min | money_without_trailing_zeros  }}</small>
+          </p>
+        </div>
+      </div>
+   </a>   
+      <div class="custom-close"></div>
+    </div>
+   {% endfor %}
+   
+  </section>
+
+<script>
+function setCookie(cname,cvalue,exdays) {
+  const d = new Date();
+  d.setTime(d.getTime() + (exdays*24*60*60*1000));
+  let expires = "expires=" + d.toGMTString();
+  document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+}
+
+function getCookie(cname) {
+  let name = cname + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let ca = decodedCookie.split(';');
+  for(let i = 0; i < ca.length; i++) {
+    let c = ca[i];
+    while (c.charAt(0) == ' ') {
+      c = c.substring(1);
+    }
+    if (c.indexOf(name) == 0) {
+      return c.substring(name.length, c.length);
+    }
+  }
+  return "null";
+}
+  
+var notify_delay = {{ section.settings.notify_delay | times: 1000 }};
+var notify_display = {{ section.settings.notify_display | times: 1000 }};
+var cur_time = notify_display;
+
+setTimeout(function() {
+    notify();
+    $(".custom-close").click(function() {
+        $("#csp").addClass("moveout");
+      setCookie('no-sales-notification',true,4);
+    });
+}, 4000);
+
+
+function notify() {
+  if(getCookie('no-sales-notification') == "null"){
+  var all_notifications = $('.custom-notification');
+  var rand_noti = Math.floor(Math.random() * all_notifications.length);
+  all_notifications.hide();
+  
+  all_notifications.eq(rand_noti).show();
+    cur_time = notify_display;
+  
+    if ($("#csp").hasClass("moveout")) {
+        cur_time = notify_delay;
+    }
+
+    setTimeout(function() {
+        $("#csp").toggleClass("moveout");
+        notify();
+    }, cur_time);
+  }else{
+  
+     $("#csp").addClass("moveout");
+  }
+}
+
+
+
+</script>
+{% schema %}
+  {
+    "name": "Fake Sales Popup",
+    "settings": [
+{
+  "type": "range",
+  "id": "notify_delay",
+  "min": 0.5,
+  "max": 24,
+  "step": 0.5,
+  "unit": "sec",
+  "label": "Delay in Each Notification",
+  "default": 1
+},
+{
+  "type": "range",
+  "id": "notify_display",
+  "min": 0.5,
+  "max": 24,
+  "step": 0.5,
+  "unit": "sec",
+  "label": "Display Time",
+  "default": 7
+}
+
+],
+"blocks":[
+{
+"type": "notification",
+"name": "Notification",
+"settings":[
+{
+        "type": "product",
+        "id": "product",
+        "label": "Product Purchased"
+      },
+      {
+        "type": "text",
+        "id": "name",
+        "label": "Person Name"
+      }
+]
+}
+]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
