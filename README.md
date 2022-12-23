@@ -10,3 +10,6 @@ To use this you need to do following.
 3. and then upload `sales-popup.css` to assetts folder.
 4. then add  `{% section 'sales-popup' %}` before `</body>` in `theme.liquid` inside layout directory.
 5. Then click *Customize Theme* and add notification on last sections. 
+6. Star this directory:star:
+7. Optionally you can follow me for more.
+8. Message on [Twitter](https://twitter.com/MrUmairGujjar) or [LinkedIn](https://www.linkedin.com/in/umairgujjar/) if you need any help.
