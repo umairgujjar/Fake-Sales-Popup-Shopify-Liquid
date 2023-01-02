@@ -1,116 +1,141 @@
 .custom-social-proof {
-	 position: fixed;
-	 bottom: 20px;
-	 left: 20px;
-	 z-index: 9999999999999 !important;
-	 transition: transform 400ms ease;
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 9999999999999 !important;
+  transition: transform 400ms ease;
 }
- .custom-social-proof.moveout {
-	 transform: translateX(-150%);
+.custom-social-proof.moveout {
+  transform: translateX(-150%);
 }
- .custom-social-proof .custom-notification {
-	 max-width: calc(100vw - 40px);
-	 border: 0;
-	 text-align: left;
-	 z-index: 99999;
-	 box-sizing: border-box;
-	 font-weight: 400;
-	 box-shadow: 2px 2px 10px 2px rgba(11, 10, 10, 0.2);
-	 background-color: #fff;
-	 position: relative;
-	 cursor: pointer;
+.custom-social-proof .custom-notification {
+  max-width: calc(100vw - 40px);
+  border: 0;
+  text-align: left;
+  z-index: 99999;
+  box-sizing: border-box;
+  font-weight: 400;
+  box-shadow: 2px 2px 10px 2px rgba(11, 10, 10, 0.2);
+  background-color: #fff;
+  position: relative;
+  cursor: pointer;
 }
- .custom-social-proof .custom-notification .custom-notification-image-wrapper {
-	 line-height: 0;
+.custom-social-proof .custom-notification .custom-notification-image-wrapper {
+  line-height: 0;
 }
- .custom-social-proof .custom-notification .custom-notification-container {
-	 display: flex !important;
-	 align-items: center;
-	 height: 80px;
+.custom-social-proof .custom-notification .custom-notification-container {
+  display: flex !important;
+  align-items: center;
+  height: 80px;
 }
- .custom-social-proof .custom-notification .custom-notification-container .custom-notification-image-wrapper img {
-	 overflow: hidden;
-	 object-fit: cover;
+.custom-social-proof
+  .custom-notification
+  .custom-notification-container
+  .custom-notification-image-wrapper
+  img {
+  overflow: hidden;
+  object-fit: cover;
 }
- .custom-social-proof .custom-notification .custom-notification-container .custom-notification-content-wrapper {
-	 margin: 0;
-	 height: 100%;
-	 color: gray;
-	 padding-left: 20px;
-	 padding-right: 20px;
-	 border-radius: 0 6px 6px 0;
-	 flex: 1;
-	 display: flex !important;
-	 flex-direction: column;
-	 justify-content: center;
+.custom-social-proof
+  .custom-notification
+  .custom-notification-container
+  .custom-notification-content-wrapper {
+  margin: 0;
+  height: 100%;
+  color: gray;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 0 6px 6px 0;
+  flex: 1;
+  display: flex !important;
+  flex-direction: column;
+  justify-content: center;
 }
- .custom-social-proof .custom-notification .custom-notification-container .custom-notification-content-wrapper .custom-notification-content {
-	 font-family: inherit !important;
-	 margin: 0 !important;
-	 padding: 0 !important;
-	 font-size: 14px;
+.custom-social-proof
+  .custom-notification
+  .custom-notification-container
+  .custom-notification-content-wrapper
+  .custom-notification-content {
+  font-family: inherit !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 14px;
 }
- .custom-social-proof .custom-notification .custom-notification-container .custom-notification-content-wrapper .custom-notification-content small {
-	 margin-top: 3px !important;
-	 display: block !important;
-	 font-size: 12px !important;
-	 opacity: 0.8;
-	 font-weight: 700;
-	 color: #7c1521;
+.custom-social-proof
+  .custom-notification
+  .custom-notification-container
+  .custom-notification-content-wrapper
+  .custom-notification-content
+  small {
+  margin-top: 3px !important;
+  display: block !important;
+  font-size: 12px !important;
+  opacity: 0.8;
+  font-weight: 700;
+  color: #7c1521;
 }
- .custom-social-proof .custom-notification .custom-notification-container .custom-notification-content-wrapper b {
-	 color: #c6ac6c;
+.custom-social-proof
+  .custom-notification
+  .custom-notification-container
+  .custom-notification-content-wrapper
+  b {
+  color: #c6ac6c;
 }
- .custom-social-proof .custom-notification .custom-close {
-	 position: absolute;
-	 top: 5px;
-	 right: 5px;
-	 height: 12px;
-	 width: 12px;
-	 cursor: pointer;
-	 transition: 0.2s ease-in-out;
-	 transform: rotate(45deg);
-	 opacity: 0;
+.custom-social-proof .custom-notification .custom-close {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  height: 12px;
+  width: 12px;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+  opacity: 0;
+  display: block;
 }
- .custom-social-proof .custom-notification .custom-close::before {
-	 content: "";
-	 display: block;
-	 width: 100%;
-	 height: 2px;
-	 background-color: gray;
-	 position: absolute;
-	 left: 0;
-	 top: 5px;
+.custom-social-proof .custom-notification .custom-close::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: gray;
+  position: absolute;
+  left: 0;
+  top: 4.5px;
+  transform: rotate(45deg);
 }
- .custom-social-proof .custom-notification .custom-close::after {
-	 content: "";
-	 display: block;
-	 height: 100%;
-	 width: 2px;
-	 background-color: gray;
-	 position: absolute;
-	 left: 5px;
-	 top: 0;
+.custom-social-proof .custom-notification .custom-close::after {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 2px;
+  background-color: gray;
+  position: absolute;
+  left: 5px;
+  top: 0;
+  transform: rotate(45deg);
 }
- @media (max-width: 990px) {
-	 .custom-social-proof .custom-notification .custom-close {
-		 top: -8px;
-		 right: -8px;
-		 height: 18px;
-		 width: 18px;
-		 opacity: 1;
-		 border: 1px solid gray;
-		 border-radius: 25px;
-		 background-color: #fff;
-	}
-	 .custom-social-proof .custom-notification .custom-close::before {
-		 top: 6.5px;
-	}
-	 .custom-social-proof .custom-notification .custom-close::after {
-		 left: 6.5px;
-	}
+
+.custom-social-proof a {
+  text-decoration: none;
 }
- .custom-social-proof .custom-notification:hover .custom-close {
-	 opacity: 1;
+
+@media (max-width: 990px) {
+  .custom-social-proof .custom-notification .custom-close {
+    top: -8px;
+    right: -8px;
+    height: 18px;
+    width: 18px;
+    opacity: 1;
+    border: 1px solid gray;
+    background-color: #fff;
+  }
+  .custom-social-proof .custom-notification .custom-close::before {
+    top: 7px;
+  }
+  .custom-social-proof .custom-notification .custom-close::after {
+    left: 6.5px;
+  }
 }
- 
+.custom-social-proof .custom-notification:hover .custom-close {
+  opacity: 1;
+}
