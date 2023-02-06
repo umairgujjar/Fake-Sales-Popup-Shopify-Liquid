@@ -1,4 +1,4 @@
-{{ 'sales-popup.scss.css' | asset_url | stylesheet_tag }}
+{{ 'sales-popup.css' | asset_url | stylesheet_tag }}
 <section id="csp" class="custom-social-proof moveout">
    {% for notification in section.blocks %}
    {% assign product = notification.settings.product %}
